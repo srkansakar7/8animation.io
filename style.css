@@ -1,0 +1,156 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  transition: background 0.2s linear;
+}
+
+.switch{
+position: absolute;
+  top: 50%;
+  left: 10%;
+  
+}
+
+.ring{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 4px solid rgba(0, 0, 0, 0.4);
+  border-radius: 60%;
+}
+.ring1{
+  position: absolute;
+  top: 155%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 4px solid rgba(0, 0, 0, 0.4);
+  border-radius: 60%;
+}
+
+.ring::before{
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-top: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+  animation: animateCircle 2s linear infinite;
+}
+
+.sp{
+  display: block;
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 50%;
+  width: 50%;
+  height: 4px;
+  background: transparent;
+  transform-origin: left;
+  animation: animate 5s linear infinite;
+}
+
+.sp::before{
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: red;
+  top: 65px;
+  left: -35px;
+  box-shadow: 0 0 20px #fff000;
+}
+
+
+@keyframes animate {
+  from{ 
+      transform: rotate(0deg) 
+  }
+  to{ 
+      transform: rotate(360deg) 
+  }
+}
+
+body.dark {
+background: #292C35;
+}
+body.light{
+  background: white;
+}
+.checkbox {
+opacity: 0;
+position: absolute;
+}
+
+.label {
+background-color: rgba(0, 0, 0, 0.3);
+border-radius: 50px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 5px;
+position: relative;
+height: 15px;
+width: 44px;
+transform: scale(1.5);
+}
+
+.label .ball {
+background-color: red;
+border-radius: 50%;
+position: absolute;
+top: 1px;
+left: 2px;
+height: 24px;
+width: 23px;
+transform: translateX(0px);
+transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+transform: translateX(24px);
+}
+
+
+.fa-moon {
+color: #f1c40f;
+font-family: sans-serif;
+font-size: 10px;
+font-style: normal;
+}
+
+.fa-sun {
+color: #f39c12;
+font-family: sans-serif;
+font-size: 10px;
+font-style: normal;
+}
+
+.paused {
+-webkit-animation-play-state: paused;
+animation-play-state: paused;
+}
+
+button{
+ background-color: Transparent;
+ font-size: 8px;
+ color: brown;
+ font-family: sans-serif;
+ font-weight: bold;
+ padding-right: 0;
+ background-repeat: no-repeat;
+ vertical-align: top;
+}
